@@ -1,4 +1,4 @@
-from appmodel import Grader
+from grader.appmodel import Grader
 
 
 def test_validate_score():
