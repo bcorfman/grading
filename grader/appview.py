@@ -1,13 +1,12 @@
-from PySide2.QtWidgets import QMainWindow
-from PySide2.QtUiTools import QUiLoader
+from PyQt5.QtWidgets import QMainWindow
+from PyQt5.uic import loadUi
 
 
 class AppView(QMainWindow):
     def __init__(self, model):
         QMainWindow.__init__(self, None)
         self.model = model
-        loader = QUiLoader(self)
-        self.win = loader.load('grading.ui', self)
+        self.win = loadUi('grading.ui', self)
         self.win.btnDidIPass.clicked.connect(self.onBtnClickDidIPass)
         self.win.show()
 
