@@ -69,7 +69,7 @@ jobs:
         pytest
     - name: Deploy with pyinstaller and give a quick test
       run: |
-        echo "BUILD_NUMBER = '${{ github.run_number }}'" >> ${{ github.workspace }}/adventure/util.py
+        echo "BUILD_NUMBER = '${{ github.run_number }}'" >> ${{ github.workspace }}/grader/util.py
         pyinstaller grader.spec
         ${{ github.workspace }}/dist/grader --version
     - name: Upload x86_64 Binary
