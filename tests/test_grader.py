@@ -39,6 +39,3 @@ def test_integration():
     assert(g.passed_class(g.get_letter_grade(70.0)) == 'You passed the class!')
     assert(g.passed_class(g.get_letter_grade(101)) == 'You passed the class!')
 
-
-def test_system():
-    ga = Grading
