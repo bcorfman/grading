@@ -17,20 +17,15 @@ a = Analysis(['gradingapp.py'],
              noarchive=False)
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
+
 exe = EXE(pyz,
-          [],
-          exclude_binaries=True,
+          a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
           name='grader',
-          debug=True,
+          debug=False,
           bootloader_ignore_signals=False,
           strip=False,
-          upx=False,
-          console=True )
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               strip=False,
-               upx=False,
-               upx_exclude=[],
-               name='grader')
+          upx=True,
+          console=False )
