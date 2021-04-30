@@ -70,7 +70,7 @@ jobs:
     - name: Deploy with pyinstaller and give a quick test
       run: |
         echo "BUILD_NUMBER = '${{ github.run_number }}'" >> ${{ github.workspace }}/grader/util.py
-        pyinstaller grader.spec
+        pyinstaller --onefile grader.spec
         ${{ github.workspace }}/dist/grader --version
     - name: Upload x86_64 Binary
       uses: actions/upload-release-asset@v1.0.1
