@@ -8,7 +8,6 @@ class AppView(QMainWindow):
         self.model = model
         self.win = loadUi('grading.ui', self)
         self.win.btnDidIPass.clicked.connect(self.onBtnClickDidIPass)
-        self.win.show()
 
     def onBtnClickDidIPass(self):
         label = self.win.lblResult

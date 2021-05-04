@@ -22,4 +22,5 @@ else:
     main.setQuitOnLastWindowClosed(True)
     model = Grader()
     view = AppView(model)
+    view.show()
     sys.exit(main.exec_())

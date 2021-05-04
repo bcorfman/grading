@@ -34,8 +34,7 @@ def test_integration():
     g = Grader()
     assert (g.passed_class(g.get_letter_grade(-1.0)) is None)
     assert (g.passed_class(g.get_letter_grade('100.0')) is None)
-    assert(g.passed_class(g.get_letter_grade(0.0)) == 'You failed the class!')
-    assert(g.passed_class(g.get_letter_grade(50.0)) == 'You failed the class!')
-    assert(g.passed_class(g.get_letter_grade(70.0)) == 'You passed the class!')
-    assert(g.passed_class(g.get_letter_grade(101)) == 'You passed the class!')
-
+    assert (g.passed_class(g.get_letter_grade(0.0)) == 'You failed the class!')
+    assert (g.passed_class(g.get_letter_grade(50.0)) == 'You failed the class!')
+    assert (g.passed_class(g.get_letter_grade(70.0)) == 'You passed the class!')
+    assert (g.passed_class(g.get_letter_grade(101)) == 'You passed the class!')
