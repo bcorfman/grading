@@ -73,10 +73,12 @@ jobs:
     - name: Test with pytest
       env:
         DISPLAY: ':99.0'
+        QT_API: 'pyqt5'
       run: pytest
     - name: Coverage report
       env:
         DISPLAY: ':99.0'
+        QT_API: 'pyqt5'
       run: pytest --cov-branch --cov-report term-missing:skip-covered --cov=grader tests/
     - name: Deploy with pyinstaller and give a quick test
       run: |
