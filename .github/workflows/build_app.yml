@@ -73,9 +73,11 @@ jobs:
     - name: Test with pytest
       env:
         DISPLAY: ':99.0'
-      run: |
-        pytest
-        pytest --cov=grader tests/
+      run: pytest
+    - name: Coverage report
+      env:
+        DISPLAY: ':99.0'
+      run: pytest --cov-report --cov=grader term-missing term:skip-covered tests/
     - name: Deploy with pyinstaller and give a quick test
       run: |
         echo "BUILD_NUMBER = '${{ github.run_number }}'" >> ${{ github.workspace }}/grader/util.py
