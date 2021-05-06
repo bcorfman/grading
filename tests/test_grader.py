@@ -22,13 +22,17 @@ def test_get_letter_grade():
 
 
 def test_passed_class():
+    class Trouble:
+        def __cmp__(self, other):
+            raise TypeError('junk')
+
     g = Grader()
     assert (g.passed_class('A') == "You passed the class!")
     assert (g.passed_class('B') == "You passed the class!")
     assert (g.passed_class('C') == "You passed the class!")
     assert (g.passed_class('D') == "You failed the class!")
     assert (g.passed_class('F') == "You failed the class!")
-    assert (g.passed_class('Z') is None)
+    assert (g.passed_class(Trouble()) is None)
 
 
 def test_integration():

@@ -16,13 +16,10 @@ class Grader:
         """ Given a letter grade, returns a message telling the student whether they
             passed their class, or None indicating an invalid grade. """
         result = None
-        try:
-            if grade in ['A', 'B', 'C']:
-                result = 'You passed the class!'
-            elif grade in ['D', 'F']:
-                result = 'You failed the class!'
-        except TypeError:
-            pass
+        if grade in ['A', 'B', 'C']:
+            result = 'You passed the class!'
+        elif grade in ['D', 'F']:
+            result = 'You failed the class!'
         return result
 
     def get_letter_grade(self, score) -> Union[str, None]:
