@@ -28,6 +28,7 @@ def test_passed_class():
     assert (g.passed_class('C') == "You passed the class!")
     assert (g.passed_class('D') == "You failed the class!")
     assert (g.passed_class('F') == "You failed the class!")
+    assert (g.passed_class('Z') is None)
 
 
 def test_integration():
