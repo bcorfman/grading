@@ -1,4 +1,3 @@
-import util
 import argparse
 import sys
 from PyQt5.QtWidgets import QApplication
