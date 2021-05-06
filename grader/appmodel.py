@@ -1,23 +1,33 @@
+from typing import Union
+
+
 class Grader:
-    def validate_data(self, text):
+    def validate_data(self, text) -> Union[float, None]:
+        """ Validates the incoming text by making sure it can be converted to a Real
+            (i.e., floating-point) type. If not, return None. """
+        score = None
         try:
             score = float(text)
         except ValueError:
-            return False
+            pass
         return score
 
-    def passed_class(self, grade):
+    def passed_class(self, grade) -> Union[str, None]:
+        """ Given a letter grade, returns a message telling the student whether they
+            passed their class, or None indicating an invalid grade. """
+        result = None
         try:
             if grade in ['A', 'B', 'C']:
-                return "You passed the class!"
+                result = 'You passed the class!'
             elif grade in ['D', 'F']:
-                return "You failed the class!"
-            else:
-                raise TypeError(f'Unrecognized grade: {grade}')
+                result = 'You failed the class!'
         except TypeError:
-            return None
+            pass
+        return result
 
-    def get_letter_grade(self, score):
+    def get_letter_grade(self, score) -> Union[str, None]:
+        """ Given a score, return a letter grade,
+            or None indicating an invalid score. """
         grade = None
         try:
             if score >= 90.0:

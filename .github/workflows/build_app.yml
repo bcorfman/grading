@@ -62,7 +62,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest pyinstaller
+        pip install flake8 pytest pytest-cov pyinstaller
         pip install -r requirements.txt
     - name: Lint with flake8
       run: |
@@ -75,6 +75,7 @@ jobs:
         DISPLAY: ':99.0'
       run: |
         pytest
+        pytest --cov=grading tests/
     - name: Deploy with pyinstaller and give a quick test
       run: |
         echo "BUILD_NUMBER = '${{ github.run_number }}'" >> ${{ github.workspace }}/grader/util.py

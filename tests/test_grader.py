@@ -8,7 +8,7 @@ def test_validate_score():
     assert (g.validate_data('0.01') == 0.01)
     assert (g.validate_data('100.00') == 100.00)
     assert (g.validate_data('100.01') == 100.01)
-    assert (g.validate_data('A') is False)
+    assert (g.validate_data('A') is None)
 
 
 def test_get_letter_grade():

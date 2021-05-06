@@ -4,12 +4,17 @@ from PyQt5.uic import loadUi
 
 class AppView(QMainWindow):
     def __init__(self, model):
+        """
+        :type model: Grader datamodel
+        """
         QMainWindow.__init__(self, None)
         self.model = model
         self.win = loadUi('grading.ui', self)
         self.win.btnDidIPass.clicked.connect(self.onBtnClickDidIPass)
 
     def onBtnClickDidIPass(self):
+        """ Responds to the click event for the Did I Pass? button by
+            setting the lblResult text. """
         label = self.win.lblResult
         text = self.win.txtGrade.text()
         if self.model.validate_data(text):
