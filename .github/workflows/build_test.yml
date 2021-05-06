@@ -53,4 +53,4 @@ jobs:
     - name: Coverage report
       env:
         DISPLAY: ':99.0'
-      run: pytest --cov-report term-missing:skip-covered --cov=grader tests/
+      run: pytest --cov-branch --cov-report term-missing:skip-covered --cov=grader tests/
