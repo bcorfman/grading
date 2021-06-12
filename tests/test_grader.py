@@ -23,11 +23,11 @@ def test_get_letter_grade():
 
 def test_passed_class():
     g = Grader()
-    assert (g.passed_class('A') == "You passed the class!")
-    assert (g.passed_class('B') == "You passed the class!")
-    assert (g.passed_class('C') == "You passed the class!")
-    assert (g.passed_class('D') == "You failed the class!")
-    assert (g.passed_class('F') == "You failed the class!")
+    assert (g.passed_class('A') == 'You passed the class!')
+    assert (g.passed_class('B') == 'You passed the class!')
+    assert (g.passed_class('C') == 'You passed the class!')
+    assert (g.passed_class('D') == 'You failed the class!')
+    assert (g.passed_class('F') == 'You failed the class!')
 
 
 def test_integration():
