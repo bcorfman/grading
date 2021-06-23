@@ -11,6 +11,7 @@ def test_validate_score():
     assert (g.validate_data('A') is None)
 
 
+# Ronald wants to know how this works.
 def test_get_letter_grade():
     g = Grader()
     assert('A' == g.get_letter_grade(101.0))
